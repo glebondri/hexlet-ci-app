@@ -1,0 +1,13 @@
+name: workflow
+
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install
+      - name: run test
+        run: make test
+      - name: run linter
+        run: make lint
